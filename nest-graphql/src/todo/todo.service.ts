@@ -12,6 +12,9 @@ export class TodoService {
         { id: 3, description: 'Piedra del Poder', done: false },
         { id: 4, description: 'Piedra del Tiempo', done: false },
         { id: 5, description: 'Piedra desde el contenedor', done: true },
+	    { id: 6, description: 'Piedra desde Vi, Editor Ligero en contenedor', done: true },
+
+
     ];
 
     get totalTodos() {

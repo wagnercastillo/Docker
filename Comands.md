@@ -40,3 +40,15 @@ docker container run \
 node:16-alpine3.16 \
 sh -c "yarn install && yarn start:dev"
 ```
+
+
+Examinación de contenedores
+
+Desde la terminal
+Docker exec -it ID-Container /bin/sh
+
+Uso de Cat y vi
+ - cd bin
+ - Cat: Imprime el codigo de un archivo
+ - VI: Permite editar el codigo de un archivo
+
