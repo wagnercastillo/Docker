@@ -2,6 +2,11 @@
 
 ## Comandos
 
+### Creación de Volumen
+```
+docker volume create "postgres-db"
+```
+
 ```
 docker container run \
 -dp 3306:3306 \
@@ -24,7 +29,7 @@ docker container run \
 phpmyadmin:5.2.0-apache
 ```
 
-- Creación de Redes
+### Creación de Redes
 ```
 docker network create world-app
 docker network connect world-app <ID_Contedor_1>
@@ -40,15 +45,35 @@ docker container run \
 node:16-alpine3.16 \
 sh -c "yarn install && yarn start:dev"
 ```
-
-
-Examinación de contenedores
+### Examinación de contenedores
 
 Desde la terminal
-Docker exec -it ID-Container /bin/sh
 
-Uso de Cat y vi
+```Docker exec -it ID-Container /bin/sh```
+
+Uso de Cat y Vi
+```
  - cd bin
  - Cat: Imprime el codigo de un archivo
  - VI: Permite editar el codigo de un archivo
+```
 
+- Otros ejemplos
+
+```
+docker container run \
+-d \
+--name postgres-db \
+-e POSTGRES_PASSWORD=123456 \
+-v postgres-db:/var/lib/postgresql/data \ 
+postgres:14-bullseye
+```
+
+```
+docker container run \
+--name pgAdmin \
+-e PGADMIN_DEFAULT_PASSWORD=123456 \
+-e PGADMIN_DEFAULT_EMAIL=superman@google.com \
+-dp 8080:80 \
+dpage/pgadmin4:latest
+```
