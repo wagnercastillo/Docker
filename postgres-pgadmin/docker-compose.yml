@@ -5,7 +5,9 @@ services:
     container_name: postgres_database
     image: postgres:14-bullseye
     volumes:
-      - postgres-db:/var/lib/postgresql/data
+      # - postgres-db:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data
+
     environment:
       - POSTGRES_PASSWORD=123456
 
@@ -15,9 +17,12 @@ services:
     image: dpage/pgadmin4:latest
     ports:
       - "8080:80"
+    volumes:
+      - ./pgAdmin:/var/lib/pgAdmin
     environment:
       - PGADMIN_DEFAULT_PASSWORD=123456
       - PGADMIN_DEFAULT_EMAIL=superman@google.com
 
-volumes:
-  postgres-db:
+# volumes:
+#   postgres-db:
+#     external: true

@@ -2,10 +2,15 @@
 
 ## Comandos
 
+
+
 ### Creación de Volumen
 ```
 docker volume create "postgres-db"
 ```
+- Bajar Volumes
+``` docker compose down ```
+
 
 ```
 docker container run \
@@ -46,6 +51,9 @@ node:16-alpine3.16 \
 sh -c "yarn install && yarn start:dev"
 ```
 ### Examinación de contenedores
+
+- Examinación de Logs
+``` docker compose logs ```
 
 Desde la terminal
 
